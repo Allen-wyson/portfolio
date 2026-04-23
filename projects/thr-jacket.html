@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>THR Jacket — Temperature & Humidity Regulation · Yo-Shiun Cheng</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner container">
+      <a href="../index.html" class="brand">Yo-Shiun Cheng</a>
+    </div>
+  </nav>
+  <main style="padding-top:var(--nav-height);">
+    <div class="container" style="padding-top:3rem;padding-bottom:6rem;">
+      <a href="../index.html#projects" class="project-back">← Back to Portfolio</a>
+      <div class="detail-bento">
+
+        <div class="detail-card span-2" style="background:var(--green-light)">
+          <p class="section-label">EPFL · Sep 2025 – Dec 2025</p>
+          <h1>THR Jacket — Temperature &amp; Humidity Regulation</h1>
+          <p>Group project for EPFL course ME-410: Mechanical Product Design and Development (Prof. Jamie Paik). Designed and fabricated a ski jacket that automatically regulates interior temperature and humidity based on sensor readings. Four cable-driven flap openings are actuated by servo motors. Contribution: PI control loop design, circuit design, and 3D modeling.</p>
+        </div>
+
+        <div class="detail-card" style="background:var(--khaki)">
+          <h2>Quick Info</h2>
+          <p><strong>Duration:</strong> Sep–Dec 2025</p>
+          <p style="margin-top:0.4rem;"><strong>Organisation:</strong> EPFL (ME-410)</p>
+          <p style="margin-top:0.4rem;"><strong>Role:</strong> Controls &amp; Circuit Engineer</p>
+          <p style="margin-top:0.4rem;"><strong>GitHub:</strong> <a href="https://github.com/Allen-wyson/Mechanical-Product-Design-and-Development-Group-Project" target="_blank" style="color:var(--green-dark)">View Repository</a></p>
+        </div>
+
+        <div class="detail-card" style="background:var(--bg);border:1px solid rgba(0,0,0,0.06);">
+          <div class="detail-img-placeholder">[ Jacket Assembly / Flap Mechanism ]</div>
+        </div>
+
+        <div class="detail-card" style="background:var(--bg);border:1px solid rgba(0,0,0,0.06);">
+          <div class="detail-img-placeholder">[ Sensor & Servo Control System ]</div>
+        </div>
+
+        <div class="detail-card" style="background:var(--green-mid)">
+          <h2>Key Results</h2>
+          <ul>
+            <li>Fully functional prototype regulating interior climate automatically</li>
+            <li>PI controller maintaining target temperature within ±1°C</li>
+            <li>Four servo-driven cable flap system for ventilation control</li>
+            <li>Custom PCB with temperature and humidity sensor integration</li>
+          </ul>
+        </div>
+
+        <div class="detail-card span-3" style="background:var(--rose)">
+          <h2>Challenges &amp; Solutions</h2>
+          <p>The primary challenge was designing a cable-routing system that allowed sufficient flap travel without straining the jacket fabric. Multiple guide tube placements were tested before settling on a routing that preserved waterproofing. On the control side, tuning the PI parameters required accounting for the slow thermal response time of the jacket interior, handled by adding a derivative filter to reduce oscillation.</p>
+        </div>
+
+        <div class="detail-card span-3" style="background:var(--lavender)">
+          <h2>Skills Used</h2>
+          <div class="pill-row">
+            <span class="pill">PID Control</span>
+            <span class="pill">Arduino</span>
+            <span class="pill">Circuit Design</span>
+            <span class="pill">SolidWorks</span>
+            <span class="pill">3D Printing</span>
+            <span class="pill">Sensor Integration</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+  <footer><p>© 2026 Yo-Shiun Cheng</p></footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

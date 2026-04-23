@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iterative Best Response of Zero-sum Racing Game · Yo-Shiun Cheng</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner container">
+      <a href="../index.html" class="brand">Yo-Shiun Cheng</a>
+    </div>
+  </nav>
+  <main style="padding-top:var(--nav-height);">
+    <div class="container" style="padding-top:3rem;padding-bottom:6rem;">
+      <a href="../index.html#projects" class="project-back">← Back to Portfolio</a>
+      <div class="detail-bento">
+
+        <div class="detail-card span-2" style="background:var(--khaki)">
+          <p class="section-label">EPFL · Feb 2025 – Jun 2025</p>
+          <h1>Iterative Best Response of Zero-sum Racing Game</h1>
+          <p>Applied game theory to a competitive two-player racing scenario modeled as a discrete zero-sum game. Implemented the Iterative Best Response (IBR) algorithm in Python to find Nash equilibria in racing strategy selection. Analyzed convergence behavior, strategy stability, and how changing the reward structure affects equilibrium outcomes.</p>
+        </div>
+
+        <div class="detail-card" style="background:var(--blue)">
+          <h2>Quick Info</h2>
+          <p><strong>Duration:</strong> Feb–Jun 2025</p>
+          <p style="margin-top:0.4rem;"><strong>Organisation:</strong> EPFL</p>
+          <p style="margin-top:0.4rem;"><strong>Role:</strong> Solo Project</p>
+        </div>
+
+        <div class="detail-card" style="background:var(--bg);border:1px solid rgba(0,0,0,0.06);">
+          <div class="detail-img-placeholder">[ Strategy Convergence Plot ]</div>
+        </div>
+
+        <div class="detail-card" style="background:var(--bg);border:1px solid rgba(0,0,0,0.06);">
+          <div class="detail-img-placeholder">[ Reward Matrix Sensitivity Analysis ]</div>
+        </div>
+
+        <div class="detail-card" style="background:var(--green-mid)">
+          <h2>Key Results</h2>
+          <ul>
+            <li>Implemented IBR algorithm converging to Nash equilibrium in ≤20 iterations</li>
+            <li>Validated zero-sum property: one player's gain equals the other's loss</li>
+            <li>Demonstrated sensitivity of equilibrium to reward matrix perturbations</li>
+            <li>Extended analysis to mixed-strategy equilibria using linear programming</li>
+          </ul>
+        </div>
+
+        <div class="detail-card span-3" style="background:var(--rose)">
+          <h2>Challenges &amp; Solutions</h2>
+          <p>The main challenge was ensuring the IBR algorithm converged rather than cycling between strategies. This was addressed by introducing a damping factor on strategy updates and checking for convergence using L2-norm thresholds. Mixed-strategy equilibria required switching to a linear program (scipy.optimize.linprog), which resolved non-convergence in non-strictly-determined games.</p>
+        </div>
+
+        <div class="detail-card span-3" style="background:var(--lavender)">
+          <h2>Skills Used</h2>
+          <div class="pill-row">
+            <span class="pill">Game Theory</span>
+            <span class="pill">Python</span>
+            <span class="pill">Optimization</span>
+            <span class="pill">Linear Programming</span>
+            <span class="pill">NumPy</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+  <footer><p>© 2026 Yo-Shiun Cheng</p></footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

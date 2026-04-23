@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cruise Controller for a Car on Highway · Yo-Shiun Cheng</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner container">
+      <a href="../index.html" class="brand">Yo-Shiun Cheng</a>
+    </div>
+  </nav>
+  <main style="padding-top:var(--nav-height);">
+    <div class="container" style="padding-top:3rem;padding-bottom:6rem;">
+      <a href="../index.html#projects" class="project-back">← Back to Portfolio</a>
+      <div class="detail-bento">
+
+        <div class="detail-card span-2" style="background:var(--blue)">
+          <p class="section-label">EPFL · Oct 2024 – Dec 2024</p>
+          <h1>Cruise Controller for a Car on Highway</h1>
+          <p>Designed and implemented a Model Predictive Control (MPC) cruise controller for highway driving in MATLAB. The controller predicts future vehicle states over a receding horizon and optimizes throttle/brake commands to maintain target speed while respecting actuator constraints. Evaluated performance under varying road grades and lead-vehicle scenarios.</p>
+        </div>
+
+        <div class="detail-card" style="background:var(--green-mid)">
+          <h2>Quick Info</h2>
+          <p><strong>Duration:</strong> Oct–Dec 2024</p>
+          <p style="margin-top:0.4rem;"><strong>Organisation:</strong> EPFL</p>
+          <p style="margin-top:0.4rem;"><strong>Role:</strong> Solo Project</p>
+        </div>
+
+        <div class="detail-card" style="background:var(--bg);border:1px solid rgba(0,0,0,0.06);">
+          <div class="detail-img-placeholder">[ MPC Control Architecture ]</div>
+        </div>
+
+        <div class="detail-card" style="background:var(--bg);border:1px solid rgba(0,0,0,0.06);">
+          <div class="detail-img-placeholder">[ Speed Tracking Performance ]</div>
+        </div>
+
+        <div class="detail-card" style="background:var(--khaki)">
+          <h2>Key Results</h2>
+          <ul>
+            <li>Speed tracking error &lt; 0.5 km/h in steady-state conditions</li>
+            <li>Smooth response without actuator saturation on 6° grades</li>
+            <li>Adaptive horizon tuning improved fuel efficiency proxy by 12%</li>
+            <li>Compared MPC vs. PID: MPC outperformed on constraint handling</li>
+          </ul>
+        </div>
+
+        <div class="detail-card span-3" style="background:var(--rose)">
+          <h2>Challenges &amp; Solutions</h2>
+          <p>Tuning the prediction horizon and weighting matrices was the main challenge. A short horizon resulted in aggressive control action; a long horizon increased solve time. An empirical sweep of horizon lengths (5–30 steps) identified 15 steps as the best trade-off. Constraint tightening ensured soft constraints on jerk did not cause infeasibility in the QP solver (quadprog).</p>
+        </div>
+
+        <div class="detail-card span-3" style="background:var(--lavender)">
+          <h2>Skills Used</h2>
+          <div class="pill-row">
+            <span class="pill">Model Predictive Control</span>
+            <span class="pill">MATLAB</span>
+            <span class="pill">Control Systems</span>
+            <span class="pill">Optimization</span>
+            <span class="pill">Vehicle Dynamics</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+  <footer><p>© 2026 Yo-Shiun Cheng</p></footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

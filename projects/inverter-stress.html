@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stress Analysis on Traction Inverter · Yo-Shiun Cheng</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner container">
+      <a href="../index.html" class="brand">Yo-Shiun Cheng</a>
+    </div>
+  </nav>
+  <main style="padding-top:var(--nav-height);">
+    <div class="container" style="padding-top:3rem;padding-bottom:6rem;">
+      <a href="../index.html#projects" class="project-back">← Back to Portfolio</a>
+      <div class="detail-bento">
+
+        <div class="detail-card span-2" style="background:var(--khaki)">
+          <p class="section-label">Delta Electronics · Jul 2023 – Aug 2023</p>
+          <h1>Stress Analysis on Traction Inverter</h1>
+          <p>Conducted structural analysis of a commercial-vehicle power inverter to evaluate how assembly and manufacturing tolerances affect mechanical stress when the inverter is mounted onto the housing. Built FEA models in Abaqus, assessed deformation risks under misalignment scenarios, and provided design recommendations to ensure a robust, tolerance-resistant mounting configuration.</p>
+        </div>
+
+        <div class="detail-card" style="background:var(--rose)">
+          <h2>Quick Info</h2>
+          <p><strong>Duration:</strong> Jul–Aug 2023</p>
+          <p style="margin-top:0.4rem;"><strong>Organisation:</strong> Delta Electronics</p>
+          <p style="margin-top:0.4rem;"><strong>Role:</strong> CAE Engineer Intern</p>
+        </div>
+
+        <div class="detail-card" style="background:var(--bg);border:1px solid rgba(0,0,0,0.06);">
+          <div class="detail-img-placeholder">[ Inverter Assembly & Mounting ]</div>
+        </div>
+
+        <div class="detail-card" style="background:var(--bg);border:1px solid rgba(0,0,0,0.06);">
+          <div class="detail-img-placeholder">[ Stress Concentration Under Misalignment ]</div>
+        </div>
+
+        <div class="detail-card" style="background:var(--green-light)">
+          <h2>Key Results</h2>
+          <ul>
+            <li>Quantified stress increase under 0.3 mm mounting misalignment</li>
+            <li>Identified two bolt locations as stress concentration sites</li>
+            <li>Recommended slot-hole modification reducing peak stress by 18%</li>
+            <li>Results validated against physical teardown observations</li>
+          </ul>
+        </div>
+
+        <div class="detail-card span-3" style="background:var(--blue)">
+          <h2>Challenges &amp; Solutions</h2>
+          <p>Modeling realistic tolerance scenarios required parametric Abaqus models where mounting positions could be varied systematically. A Python scripting approach (Abaqus scripting interface) was used to automate the batch-run of misalignment cases, reducing setup time from hours to minutes per case. Contact formulation between the inverter base and housing required careful penalty stiffness tuning to avoid numerical instability.</p>
+        </div>
+
+        <div class="detail-card span-3" style="background:var(--lavender)">
+          <h2>Skills Used</h2>
+          <div class="pill-row">
+            <span class="pill">Abaqus</span>
+            <span class="pill">Stress Analysis</span>
+            <span class="pill">FEA</span>
+            <span class="pill">Tolerance Analysis</span>
+            <span class="pill">Python Scripting</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+  <footer><p>© 2026 Yo-Shiun Cheng</p></footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

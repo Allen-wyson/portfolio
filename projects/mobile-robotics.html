@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mobile Robotics with Thymio · Yo-Shiun Cheng</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner container">
+      <a href="../index.html" class="brand">Yo-Shiun Cheng</a>
+    </div>
+  </nav>
+  <main style="padding-top:var(--nav-height);">
+    <div class="container" style="padding-top:3rem;padding-bottom:6rem;">
+      <a href="../index.html#projects" class="project-back">← Back to Portfolio</a>
+      <div class="detail-bento">
+
+        <div class="detail-card span-2" style="background:var(--lavender)">
+          <p class="section-label">EPFL · Sep 2024 – Dec 2024</p>
+          <h1>Mobile Robotics with Thymio</h1>
+          <p>Implemented navigation, localization, and obstacle avoidance for the Thymio II mobile robot using Python. Applied an Extended Kalman Filter (EKF) for state estimation, fusing odometry and proximity sensor data. Implemented global path planning (A*) and local obstacle avoidance, enabling the robot to navigate cluttered environments autonomously.</p>
+        </div>
+
+        <div class="detail-card" style="background:var(--green-mid)">
+          <h2>Quick Info</h2>
+          <p><strong>Duration:</strong> Sep–Dec 2024</p>
+          <p style="margin-top:0.4rem;"><strong>Organisation:</strong> EPFL</p>
+          <p style="margin-top:0.4rem;"><strong>Role:</strong> Group Project</p>
+        </div>
+
+        <div class="detail-card" style="background:var(--bg);border:1px solid rgba(0,0,0,0.06);">
+          <div class="detail-img-placeholder">[ Thymio Robot Navigation ]</div>
+        </div>
+
+        <div class="detail-card" style="background:var(--bg);border:1px solid rgba(0,0,0,0.06);">
+          <div class="detail-img-placeholder">[ EKF Localization & Path Planning ]</div>
+        </div>
+
+        <div class="detail-card" style="background:var(--khaki)">
+          <h2>Key Results</h2>
+          <ul>
+            <li>EKF reduced localization error by ~60% vs. odometry-only estimate</li>
+            <li>A* path planning successfully navigated 5×5 grid environments</li>
+            <li>Local avoidance handled dynamic obstacle insertion in real-time</li>
+            <li>Full pipeline running at 10 Hz on-board Python controller</li>
+          </ul>
+        </div>
+
+        <div class="detail-card span-3" style="background:var(--rose)">
+          <h2>Challenges &amp; Solutions</h2>
+          <p>The Thymio's proximity sensors have a narrow detection cone, causing missed detections at oblique angles. This was addressed by fusing multiple sensor readings with a confidence weighting scheme in the EKF update step. Odometry drift over long runs was corrected by periodic landmark-based re-localization using known map features.</p>
+        </div>
+
+        <div class="detail-card span-3" style="background:var(--green-light)">
+          <h2>Skills Used</h2>
+          <div class="pill-row">
+            <span class="pill">Mobile Robotics</span>
+            <span class="pill">Kalman Filter</span>
+            <span class="pill">Python</span>
+            <span class="pill">Path Planning</span>
+            <span class="pill">Sensor Fusion</span>
+            <span class="pill">Thymio II</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+  <footer><p>© 2026 Yo-Shiun Cheng</p></footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>
