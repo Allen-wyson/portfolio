@@ -33,9 +33,6 @@
 
 /* dark mode transition targets */
 .navbar,
-.bento-card,
-.project-card,
-.edu-card,
 .detail-card,
 .skills-group,
 .pub-card,
@@ -238,7 +235,8 @@ main { padding-top: var(--nav-height); }
   padding: 1.5rem;
   cursor: pointer;
   box-shadow: 0 2px 8px var(--card-shadow);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+              background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -294,7 +292,8 @@ main { padding-top: var(--nav-height); }
 .edu-card {
   border-radius: var(--radius); padding: 2rem;
   box-shadow: 0 2px 8px var(--card-shadow);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+              background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 .edu-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px var(--card-shadow-hover); }
 .edu-degree { font-weight: 500; margin-top: 0.25rem; }
@@ -322,7 +321,8 @@ main { padding-top: var(--nav-height); }
 .project-card {
   border-radius: var(--radius); padding: 1.75rem;
   box-shadow: 0 2px 8px var(--card-shadow);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+              background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   display: flex; flex-direction: column; gap: 0.5rem; min-height: 180px;
 }
 .project-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px var(--card-shadow-hover); }
@@ -420,13 +420,20 @@ footer {
     transform: none;
     transition: none;
   }
+  body,
+  .navbar,
+  .nav-links,
   .bento-card,
   .project-card,
   .edu-card,
+  .detail-card,
+  .skills-group,
+  .pub-card,
   .nav-link,
   .contact-link,
   .pill,
-  .btn {
+  .btn,
+  footer {
     transition: none;
   }
   .bento-card:hover,
