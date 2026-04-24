@@ -241,6 +241,7 @@ main { padding-top: var(--nav-height); }
 .about-photo { flex-shrink: 0; }
 .about-photo img, .photo-placeholder {
   width: 160px; height: 160px; border-radius: 50%; object-fit: cover;
+  border: 3px solid var(--green-mid);
 }
 .photo-placeholder {
   display: flex; align-items: center; justify-content: center;
