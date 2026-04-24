@@ -472,6 +472,8 @@ footer {
   .pill,
   .btn,
   .theme-toggle,
+  .filter-btn,
+  .back-to-top,
   footer {
     transition: none;
   }
@@ -504,3 +506,66 @@ footer {
   transition: top 0.15s ease;
 }
 .skip-link:focus { top: 0; }
+
+/* ── Scroll progress bar ── */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--green-dark);
+  z-index: 101;
+  pointer-events: none;
+  transition: width 0.05s linear;
+}
+
+/* ── Back-to-top button ── */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--green-dark);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, filter 0.15s ease;
+  z-index: 99;
+}
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.back-to-top:hover { filter: brightness(0.88); }
+
+/* ── Project tag filter ── */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.filter-btn {
+  padding: 0.35rem 0.9rem;
+  border-radius: 100px;
+  border: 1.5px solid var(--green-dark);
+  background: transparent;
+  color: var(--green-dark);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--green-dark);
+  color: #fff;
+}

@@ -73,8 +73,48 @@ function initDarkMode() {
   });
 }
 
-function initScrollProgress() {}
+function initScrollProgress() {
+  const bar = document.getElementById('scroll-progress');
+  if (!bar) return;
 
-function initBackToTop() {}
+  window.addEventListener('scroll', () => {
+    const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+    bar.style.width = pct + '%';
+    bar.setAttribute('aria-valuenow', Math.round(pct));
+  }, { passive: true });
+}
 
-function initProjectFilter() {}
+function initBackToTop() {
+  const btn = document.getElementById('back-to-top');
+  if (!btn) return;
+
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('visible', window.scrollY > 400);
+  }, { passive: true });
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+function initProjectFilter() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.project-card');
+  if (!filterBtns.length) return;
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter;
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      cards.forEach(card => {
+        const tags = (card.dataset.tags ?? '').split(' ');
+        const matches = filter === 'all' || tags.includes(filter);
+        card.style.opacity = matches ? '' : '0';
+        card.style.transform = matches ? '' : 'scale(0.95)';
+        card.style.pointerEvents = matches ? '' : 'none';
+      });
+    });
+  });
+}

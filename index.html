@@ -10,14 +10,17 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <script>
     (function () {
-      var t = localStorage.getItem('theme') ||
-        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', t);
+      try {
+        var t = localStorage.getItem('theme') ||
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
     })();
   </script>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+  <div id="scroll-progress" role="progressbar" aria-label="Page scroll progress" aria-valuemin="0" aria-valuemax="100"></div>
   <a href="#about" class="skip-link">Skip to main content</a>
   <nav class="navbar" id="navbar">
     <div class="nav-inner container">
@@ -237,63 +240,73 @@
       <div class="container">
         <p class="section-label">Projects</p>
         <h2>Selected Work</h2>
+
+        <div class="filter-bar" role="group" aria-label="Filter projects by tag">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="cae-fea">CAE / FEA</button>
+          <button class="filter-btn" data-filter="robotics">Robotics</button>
+          <button class="filter-btn" data-filter="control-systems">Control Systems</button>
+          <button class="filter-btn" data-filter="structural-design">Structural Design</button>
+          <button class="filter-btn" data-filter="data-driven">Data-Driven</button>
+        </div>
+
         <div class="projects-grid fade-in">
 
-          <a href="projects/soft-robotic-tongue.html" class="project-card" style="background:var(--green-mid)">
+          <a href="projects/soft-robotic-tongue.html" class="project-card" data-tags="robotics control-systems" style="background:var(--green-mid); --card-bg:var(--green-mid)">
             <p class="section-label">2025 · CREATE Lab</p>
             <h3>Soft Robotic Tongue for Speech</h3>
             <div class="pill-row"><span class="pill">Soft Robotics</span><span class="pill">Pneumatic Actuation</span><span class="pill">SolidWorks</span></div>
           </a>
 
-          <a href="projects/thr-jacket.html" class="project-card" style="background:var(--green-light)">
+          <a href="projects/thr-jacket.html" class="project-card" data-tags="robotics control-systems" style="background:var(--green-light); --card-bg:var(--green-light)">
             <p class="section-label">2025 · EPFL</p>
             <h3>THR Jacket — Auto Temp &amp; Humidity Regulation</h3>
             <div class="pill-row"><span class="pill">PI Control</span><span class="pill">Arduino</span><span class="pill">Circuit Design</span></div>
           </a>
 
-          <a href="projects/racing-game.html" class="project-card" style="background:var(--khaki)">
+          <a href="projects/racing-game.html" class="project-card" data-tags="control-systems data-driven" style="background:var(--khaki); --card-bg:var(--khaki)">
             <p class="section-label">2025 · EPFL</p>
             <h3>Iterative Best Response of Zero-sum Racing Game</h3>
             <div class="pill-row"><span class="pill">Game Theory</span><span class="pill">Python</span><span class="pill">Optimization</span></div>
           </a>
 
-          <a href="projects/spider-web-optimization.html" class="project-card" style="background:var(--green-mid)">
+          <a href="projects/spider-web-optimization.html" class="project-card" data-tags="cae-fea data-driven" style="background:var(--green-mid); --card-bg:var(--green-mid)">
             <p class="section-label">2025 · EPFL</p>
             <h3>Strength-to-Weight Optimization of Spider-web Structure</h3>
             <div class="pill-row"><span class="pill">ANSYS</span><span class="pill">MATLAB</span><span class="pill">FEA</span><span class="pill">Bayesian Optimization</span></div>
           </a>
 
-          <a href="projects/cruise-controller.html" class="project-card" style="background:var(--blue)">
+          <a href="projects/cruise-controller.html" class="project-card" data-tags="control-systems" style="background:var(--blue); --card-bg:var(--blue)">
             <p class="section-label">2024 · EPFL</p>
             <h3>Cruise Controller for a Car on Highway</h3>
             <div class="pill-row"><span class="pill">MPC</span><span class="pill">MATLAB</span><span class="pill">Control Systems</span></div>
           </a>
 
-          <a href="projects/mobile-robotics.html" class="project-card" style="background:var(--lavender)">
+          <a href="projects/mobile-robotics.html" class="project-card" data-tags="robotics control-systems" style="background:var(--lavender); --card-bg:var(--lavender)">
             <p class="section-label">2024 · EPFL</p>
             <h3>Mobile Robotics with Thymio</h3>
             <div class="pill-row"><span class="pill">Mobile Robotics</span><span class="pill">Kalman Filter</span><span class="pill">Python</span></div>
           </a>
 
-          <a href="projects/chassis-analysis.html" class="project-card" style="background:var(--rose)">
+          <a href="projects/chassis-analysis.html" class="project-card" data-tags="cae-fea structural-design" style="background:var(--rose); --card-bg:var(--rose)">
             <p class="section-label">2023 · Delta Electronics</p>
             <h3>Chassis Structural &amp; Vibration Analysis</h3>
             <div class="pill-row"><span class="pill">Abaqus</span><span class="pill">SolidWorks</span><span class="pill">Vibration Analysis</span></div>
           </a>
 
-          <a href="projects/inverter-stress.html" class="project-card" style="background:var(--khaki)">
+          <a href="projects/inverter-stress.html" class="project-card" data-tags="cae-fea" style="background:var(--khaki); --card-bg:var(--khaki)">
             <p class="section-label">2023 · Delta Electronics</p>
             <h3>Stress Analysis on Traction Inverter</h3>
             <div class="pill-row"><span class="pill">Abaqus</span><span class="pill">Stress Analysis</span><span class="pill">FEA</span></div>
           </a>
 
-          <a href="projects/spaceframe-design.html" class="project-card" style="background:var(--green-light)">
+          <a href="projects/spaceframe-design.html" class="project-card" data-tags="cae-fea structural-design" style="background:var(--green-light); --card-bg:var(--green-light)">
             <p class="section-label">2022–2023 · NTU Racing</p>
             <h3>NTU Racing Team Spaceframe Design</h3>
             <div class="pill-row"><span class="pill">SolidWorks</span><span class="pill">COMSOL</span><span class="pill">FSAE</span></div>
           </a>
 
-          <a href="projects/suspension-brackets.html" class="project-card" style="background:var(--green-mid)">
+          <a href="projects/suspension-brackets.html" class="project-card" data-tags="cae-fea structural-design" style="background:var(--green-mid); --card-bg:var(--green-mid)">
             <p class="section-label">2021–2022 · NTU Racing</p>
             <h3>NTU Racing Suspension Brackets Design</h3>
             <div class="pill-row"><span class="pill">SolidWorks</span><span class="pill">COMSOL</span><span class="pill">Structural Analysis</span></div>
@@ -388,5 +401,8 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
 </body>
 </html>
