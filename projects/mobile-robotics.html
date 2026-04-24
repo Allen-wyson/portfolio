@@ -52,6 +52,15 @@
           </ul>
         </div>
 
+        <div class="detail-card span-3" style="background:var(--blue)">
+          <h2>My Contribution</h2>
+          <ul>
+            <li>Implemented Extended Kalman Filter (EKF) for robot state estimation</li>
+            <li>Fused odometry and camera measurements to estimate robot position and orientation</li>
+            <li>EKF corrected cumulative errors (wheel slippage, sensor drift) to prevent trajectory deviation</li>
+          </ul>
+        </div>
+
         <div class="detail-card span-3" style="background:var(--rose)">
           <h2>Challenges &amp; Solutions</h2>
           <p>The Thymio's proximity sensors have a narrow detection cone, causing missed detections at oblique angles. This was addressed by fusing multiple sensor readings with a confidence weighting scheme in the EKF update step. Odometry drift over long runs was corrected by periodic landmark-based re-localization using known map features.</p>

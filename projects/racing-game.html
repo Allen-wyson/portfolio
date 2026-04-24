@@ -22,14 +22,14 @@
       <div class="detail-bento">
 
         <div class="detail-card span-2" style="background:var(--khaki)">
-          <p class="section-label">EPFL · Fall 2024 · ME-429</p>
+          <p class="section-label">EPFL · Spring 2025 · ME-429</p>
           <h1>Iterative Best Response of Zero-sum Racing Game</h1>
           <p>Modeled and simulated a head-to-head racing duel between two autonomous cars as a multi-stage zero-sum feedback game. At each time step, each car solves a quadratic program (cvxpy/OSQP) to anticipate and counter its opponent's move. The Iterative Best Response (IBR) algorithm alternates between the two players until saddle-point controls are reached. Vehicle kinematics follow a bicycle model in both Cartesian and Frenet coordinates, with collision avoidance enforced via elliptical safety constraints.</p>
         </div>
 
         <div class="detail-card" style="background:var(--blue)">
           <h2>Quick Info</h2>
-          <p><strong>Duration:</strong> Fall 2024</p>
+          <p><strong>Duration:</strong> Feb–Jun 2025</p>
           <p style="margin-top:0.4rem;"><strong>Organisation:</strong> EPFL (ME-429)</p>
           <p style="margin-top:0.4rem;"><strong>Instructor:</strong> Dr. Maryam Kamgarpour</p>
           <p style="margin-top:0.4rem;"><strong>Role:</strong> Group Project (with Clément Suttor)</p>
@@ -51,6 +51,15 @@
             <li>IBR convergence: relative cost gap |J₁ − J₂| ≈ 10% on average</li>
             <li>Collision and track boundary constraints satisfied across all tested scenarios</li>
             <li>Full pipeline implemented in Python with cvxpy/OSQP for real-time QP</li>
+          </ul>
+        </div>
+
+        <div class="detail-card span-3" style="background:var(--blue)">
+          <h2>My Contribution</h2>
+          <ul>
+            <li>Built the bicycle model for vehicle kinematics</li>
+            <li>Implemented coordinate transformation from Cartesian frame to Frenet frame</li>
+            <li>Formulated the racing interaction as a multi-stage feedback game where one player's gain is the other's loss</li>
           </ul>
         </div>
 

@@ -54,6 +54,16 @@
           </ul>
         </div>
 
+        <div class="detail-card span-3" style="background:var(--blue)">
+          <h2>My Contribution</h2>
+          <ul>
+            <li>Analytical linearization of the car model around steady cruise conditions</li>
+            <li>Subsystem decomposition into independent lateral and longitudinal dynamics</li>
+            <li>Linear MPC controllers with terminal sets for both subsystems</li>
+            <li>Nonlinear MPC (NMPC) for complex maneuvers and overtaking with ellipsoidal constraints</li>
+          </ul>
+        </div>
+
         <div class="detail-card span-3" style="background:var(--rose)">
           <h2>Challenges &amp; Solutions</h2>
           <p>The main challenge was maintaining feasibility of the QP across all deliverables, particularly when combining tube-based safety constraints with tight actuator bounds. Subsystem decomposition into independent lateral and longitudinal MPC controllers reduced problem size and improved solve times. Terminal set computation (MPT3 toolbox) was critical for guaranteeing recursive feasibility in the linear MPC stages.</p>
