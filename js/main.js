@@ -78,7 +78,8 @@ function initScrollProgress() {
   if (!bar) return;
 
   window.addEventListener('scroll', () => {
-    const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+    const scrollable = document.body.scrollHeight - window.innerHeight;
+    const pct = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
     bar.style.width = pct + '%';
     bar.setAttribute('aria-valuenow', Math.round(pct));
   }, { passive: true });
@@ -105,8 +106,12 @@ function initProjectFilter() {
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const filter = btn.dataset.filter;
-      filterBtns.forEach(b => b.classList.remove('active'));
+      filterBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
       btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
 
       cards.forEach(card => {
         const tags = (card.dataset.tags ?? '').split(' ');
@@ -114,6 +119,12 @@ function initProjectFilter() {
         card.style.opacity = matches ? '' : '0';
         card.style.transform = matches ? '' : 'scale(0.95)';
         card.style.pointerEvents = matches ? '' : 'none';
+        card.setAttribute('aria-hidden', matches ? 'false' : 'true');
+        if (matches) {
+          card.removeAttribute('tabindex');
+        } else {
+          card.setAttribute('tabindex', '-1');
+        }
       });
     });
   });
