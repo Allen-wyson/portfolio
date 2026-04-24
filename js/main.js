@@ -2,6 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initHamburger();
   initFadeIn();
   initScrollSpy();
+  initDarkMode();
+  initScrollProgress();
+  initBackToTop();
+  initProjectFilter();
 });
 
 function initHamburger() {
@@ -56,3 +60,21 @@ function initScrollSpy() {
 
   sections.forEach(section => observer.observe(section));
 }
+
+function initDarkMode() {
+  const btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+
+  btn.addEventListener('click', () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const next = isDark ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+}
+
+function initScrollProgress() {}
+
+function initBackToTop() {}
+
+function initProjectFilter() {}
