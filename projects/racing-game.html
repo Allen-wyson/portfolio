@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Iterative Best Response of Zero-sum Racing Game · Yo-Shiun Cheng</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👽</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -21,16 +22,18 @@
       <div class="detail-bento">
 
         <div class="detail-card span-2" style="background:var(--khaki)">
-          <p class="section-label">EPFL · Feb 2025 – Jun 2025</p>
+          <p class="section-label">EPFL · Fall 2024 · ME-429</p>
           <h1>Iterative Best Response of Zero-sum Racing Game</h1>
-          <p>Applied game theory to a competitive two-player racing scenario modeled as a discrete zero-sum game. Implemented the Iterative Best Response (IBR) algorithm in Python to find Nash equilibria in racing strategy selection. Analyzed convergence behavior, strategy stability, and how changing the reward structure affects equilibrium outcomes.</p>
+          <p>Modeled and simulated a head-to-head racing duel between two autonomous cars as a multi-stage zero-sum feedback game. At each time step, each car solves a quadratic program (cvxpy/OSQP) to anticipate and counter its opponent's move. The Iterative Best Response (IBR) algorithm alternates between the two players until saddle-point controls are reached. Vehicle kinematics follow a bicycle model in both Cartesian and Frenet coordinates, with collision avoidance enforced via elliptical safety constraints.</p>
         </div>
 
         <div class="detail-card" style="background:var(--blue)">
           <h2>Quick Info</h2>
-          <p><strong>Duration:</strong> Feb–Jun 2025</p>
-          <p style="margin-top:0.4rem;"><strong>Organisation:</strong> EPFL</p>
-          <p style="margin-top:0.4rem;"><strong>Role:</strong> Solo Project</p>
+          <p><strong>Duration:</strong> Fall 2024</p>
+          <p style="margin-top:0.4rem;"><strong>Organisation:</strong> EPFL (ME-429)</p>
+          <p style="margin-top:0.4rem;"><strong>Instructor:</strong> Dr. Maryam Kamgarpour</p>
+          <p style="margin-top:0.4rem;"><strong>Role:</strong> Group Project (with Clément Suttor)</p>
+          <p style="margin-top:0.4rem;"><strong>GitHub:</strong> <a href="https://github.com/Allen-wyson/Multi-Agent-Decision-Making-and-Control-Final-Project" target="_blank" style="color:var(--green-dark)">View Repository</a></p>
         </div>
 
         <div class="detail-card" style="background:var(--bg);border:1px solid rgba(0,0,0,0.06);">
@@ -44,16 +47,16 @@
         <div class="detail-card" style="background:var(--green-mid)">
           <h2>Key Results</h2>
           <ul>
-            <li>Implemented IBR algorithm converging to Nash equilibrium in ≤20 iterations</li>
-            <li>Validated zero-sum property: one player's gain equals the other's loss</li>
-            <li>Demonstrated sensitivity of equilibrium to reward matrix perturbations</li>
-            <li>Extended analysis to mixed-strategy equilibria using linear programming</li>
+            <li>Validated saddle-point behavior: both cars accelerate optimally on straight track</li>
+            <li>IBR convergence: relative cost gap |J₁ − J₂| ≈ 10% on average</li>
+            <li>Collision and track boundary constraints satisfied across all tested scenarios</li>
+            <li>Full pipeline implemented in Python with cvxpy/OSQP for real-time QP</li>
           </ul>
         </div>
 
         <div class="detail-card span-3" style="background:var(--rose)">
           <h2>Challenges &amp; Solutions</h2>
-          <p>The main challenge was ensuring the IBR algorithm converged rather than cycling between strategies. This was addressed by introducing a damping factor on strategy updates and checking for convergence using L2-norm thresholds. Mixed-strategy equilibria required switching to a linear program (scipy.optimize.linprog), which resolved non-convergence in non-strictly-determined games.</p>
+          <p>The main challenge was ensuring IBR converged to a saddle-point rather than cycling. Elliptical collision constraints introduced non-convexity, which was handled with slack-augmented QPs to maintain feasibility. Frenet-frame coordinate transforms were used to simplify track boundary constraints, decoupling longitudinal and lateral dynamics for cleaner QP formulation at each time step.</p>
         </div>
 
         <div class="detail-card span-3" style="background:var(--lavender)">
@@ -61,9 +64,10 @@
           <div class="pill-row">
             <span class="pill">Game Theory</span>
             <span class="pill">Python</span>
-            <span class="pill">Optimization</span>
-            <span class="pill">Linear Programming</span>
-            <span class="pill">NumPy</span>
+            <span class="pill">Quadratic Programming</span>
+            <span class="pill">Bicycle Model Dynamics</span>
+            <span class="pill">Frenet Coordinates</span>
+            <span class="pill">cvxpy / OSQP</span>
           </div>
         </div>
 

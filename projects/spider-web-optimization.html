@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Strength-to-Weight Ratio Optimization of Spider-web Structure · Yo-Shiun Cheng</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👽</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -21,16 +22,18 @@
       <div class="detail-bento">
 
         <div class="detail-card span-2" style="background:var(--green-mid)">
-          <p class="section-label">EPFL · Feb 2025 – Jun 2025</p>
+          <p class="section-label">EPFL · Fall 2024 · ME-428</p>
           <h1>Strength-to-Weight Ratio Optimization of Spider-web Structure</h1>
-          <p>Used finite element analysis and a genetic algorithm to maximize the strength-to-weight ratio of spider-web-inspired truss structures. Built parametric ANSYS FEA models and drove the optimization loop with a MATLAB genetic algorithm, varying thread radii, angles, and spiral densities to identify superior topologies for lightweight load-bearing applications.</p>
+          <p>Developed a data-driven workflow to maximize the strength-to-weight ratio of bioinspired spider-web geometries. Used Latin Hypercube Sampling to explore a discrete design space (radial/spiral thread counts and radii), automated SolidWorks CAD generation via Python, ran ANSYS FEA to evaluate each candidate, then applied Bayesian Optimization (Gaussian Process surrogate + Expected Improvement acquisition) to converge on the optimal design in 20 FEA iterations.</p>
         </div>
 
         <div class="detail-card" style="background:var(--green-light)">
           <h2>Quick Info</h2>
-          <p><strong>Duration:</strong> Feb–Jun 2025</p>
-          <p style="margin-top:0.4rem;"><strong>Organisation:</strong> EPFL</p>
-          <p style="margin-top:0.4rem;"><strong>Role:</strong> Solo Project</p>
+          <p><strong>Duration:</strong> Fall 2024</p>
+          <p style="margin-top:0.4rem;"><strong>Organisation:</strong> EPFL (ME-428)</p>
+          <p style="margin-top:0.4rem;"><strong>Supervisor:</strong> Prof. Josie Hughes</p>
+          <p style="margin-top:0.4rem;"><strong>Role:</strong> Group Project (with W. Apel &amp; T. Friberg)</p>
+          <p style="margin-top:0.4rem;"><strong>GitHub:</strong> <a href="https://github.com/Allen-wyson/Data-Driven-Design-and-Fabrication-Methods-Final-Project" target="_blank" style="color:var(--green-dark)">View Repository</a></p>
         </div>
 
         <div class="detail-card" style="background:var(--bg);border:1px solid rgba(0,0,0,0.06);">
@@ -44,16 +47,16 @@
         <div class="detail-card" style="background:var(--khaki)">
           <h2>Key Results</h2>
           <ul>
-            <li>Achieved 30%+ improvement in strength-to-weight vs. baseline uniform web</li>
-            <li>Identified optimal radial-to-spiral thread ratio for distributed loads</li>
-            <li>GA converged within 50 generations across varied initial populations</li>
-            <li>Validated optimized topology in ANSYS under multiple load cases</li>
+            <li>Optimal design: 5 radial &amp; 5 spiral threads, radii 2.5 mm &amp; 0.5 mm</li>
+            <li>Best strength-to-weight ratio: <strong>13,225 N/kg</strong></li>
+            <li>Bayesian Optimization converged within 20 costly FEA evaluations</li>
+            <li>Load capacity precision: ±0.1 MPa across optimization runs</li>
           </ul>
         </div>
 
         <div class="detail-card span-3" style="background:var(--rose)">
           <h2>Challenges &amp; Solutions</h2>
-          <p>The genetic algorithm's fitness evaluation required running a full FEA solve for each candidate, making the optimization expensive. This was mitigated by reducing mesh density during GA iterations (coarse mesh for fitness ranking) and reserving fine-mesh validation for the top-N candidates each generation. Constraint handling for minimum thread radius was implemented as a penalty term in the fitness function.</p>
+          <p>Each fitness evaluation required a full FEA solve, making brute-force search infeasible across the design space. Bayesian Optimization addressed this by fitting a Gaussian Process surrogate to already-evaluated designs and using Expected Improvement to intelligently select the next experiment — balancing exploration of unseen regions with exploitation of promising ones. This reduced the required FEA calls from hundreds to just 20 while still finding the global optimum.</p>
         </div>
 
         <div class="detail-card span-3" style="background:var(--lavender)">
@@ -61,10 +64,11 @@
           <div class="pill-row">
             <span class="pill">ANSYS</span>
             <span class="pill">MATLAB</span>
+            <span class="pill">SolidWorks</span>
+            <span class="pill">Python</span>
             <span class="pill">FEA</span>
-            <span class="pill">Genetic Algorithm</span>
-            <span class="pill">Structural Optimization</span>
-            <span class="pill">Parametric Modeling</span>
+            <span class="pill">Bayesian Optimization</span>
+            <span class="pill">Latin Hypercube Sampling</span>
           </div>
         </div>
 

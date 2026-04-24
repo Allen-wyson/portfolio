@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cruise Controller for a Car on Highway · Yo-Shiun Cheng</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👽</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -21,16 +22,18 @@
       <div class="detail-bento">
 
         <div class="detail-card span-2" style="background:var(--blue)">
-          <p class="section-label">EPFL · Oct 2024 – Dec 2024</p>
+          <p class="section-label">EPFL · Fall 2024 · ME-425</p>
           <h1>Cruise Controller for a Car on Highway</h1>
-          <p>Designed and implemented a Model Predictive Control (MPC) cruise controller for highway driving in MATLAB. The controller predicts future vehicle states over a receding horizon and optimizes throttle/brake commands to maintain target speed while respecting actuator constraints. Evaluated performance under varying road grades and lead-vehicle scenarios.</p>
+          <p>Implemented a full Model Predictive Control (MPC) framework for autonomous highway driving in MATLAB. The controller handles both lateral (lane-keeping) and longitudinal (velocity tracking) dynamics via analytically linearized subsystems. Advanced deliverables include offset-free tracking via disturbance estimation, tube-based MPC for safe car-following with guaranteed minimum gap, and Nonlinear MPC (NMPC) for overtaking maneuvers with ellipsoidal obstacle constraints.</p>
         </div>
 
         <div class="detail-card" style="background:var(--green-mid)">
           <h2>Quick Info</h2>
-          <p><strong>Duration:</strong> Oct–Dec 2024</p>
-          <p style="margin-top:0.4rem;"><strong>Organisation:</strong> EPFL</p>
-          <p style="margin-top:0.4rem;"><strong>Role:</strong> Solo Project</p>
+          <p><strong>Duration:</strong> Fall 2024</p>
+          <p style="margin-top:0.4rem;"><strong>Organisation:</strong> EPFL (ME-425)</p>
+          <p style="margin-top:0.4rem;"><strong>Instructor:</strong> Prof. Collin Jones</p>
+          <p style="margin-top:0.4rem;"><strong>Role:</strong> Group Project (with Jiwon You)</p>
+          <p style="margin-top:0.4rem;"><strong>GitHub:</strong> <a href="https://github.com/Allen-wyson/Model-Predictive-Control-Final-Project" target="_blank" style="color:var(--green-dark)">View Repository</a></p>
         </div>
 
         <div class="detail-card" style="background:var(--bg);border:1px solid rgba(0,0,0,0.06);">
@@ -44,16 +47,16 @@
         <div class="detail-card" style="background:var(--khaki)">
           <h2>Key Results</h2>
           <ul>
-            <li>Speed tracking error &lt; 0.5 km/h in steady-state conditions</li>
-            <li>Smooth response without actuator saturation on 6° grades</li>
-            <li>Adaptive horizon tuning improved fuel efficiency proxy by 12%</li>
-            <li>Compared MPC vs. PID: MPC outperformed on constraint handling</li>
+            <li>Lane change completed in ≤ 3 s without overshoot</li>
+            <li>Speed settling from 80 → 120 km/h within 10 s</li>
+            <li>Tube-based MPC maintained safe following gap ≥ 8 m under uncertainty</li>
+            <li>NMPC overtaking maneuver satisfied passenger-comfort constraints throughout</li>
           </ul>
         </div>
 
         <div class="detail-card span-3" style="background:var(--rose)">
           <h2>Challenges &amp; Solutions</h2>
-          <p>Tuning the prediction horizon and weighting matrices was the main challenge. A short horizon resulted in aggressive control action; a long horizon increased solve time. An empirical sweep of horizon lengths (5–30 steps) identified 15 steps as the best trade-off. Constraint tightening ensured soft constraints on jerk did not cause infeasibility in the QP solver (quadprog).</p>
+          <p>The main challenge was maintaining feasibility of the QP across all deliverables, particularly when combining tube-based safety constraints with tight actuator bounds. Subsystem decomposition into independent lateral and longitudinal MPC controllers reduced problem size and improved solve times. Terminal set computation (MPT3 toolbox) was critical for guaranteeing recursive feasibility in the linear MPC stages.</p>
         </div>
 
         <div class="detail-card span-3" style="background:var(--lavender)">
