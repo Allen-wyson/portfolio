@@ -48,6 +48,12 @@ footer {
 [data-theme="dark"] footer {
   border-top-color: rgba(255, 255, 255, 0.08);
 }
+[data-theme="dark"] .nav-links {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+[data-theme="dark"] .nav-links li a {
+  border-bottom-color: rgba(255, 255, 255, 0.05);
+}
 
 /* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }

@@ -65,11 +65,15 @@ function initDarkMode() {
   const btn = document.getElementById('theme-toggle');
   if (!btn) return;
 
+  const initialDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  btn.setAttribute('aria-pressed', String(initialDark));
+
   btn.addEventListener('click', () => {
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
     const next = isDark ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', next);
     localStorage.setItem('theme', next);
+    btn.setAttribute('aria-pressed', String(next === 'dark'));
   });
 }
 
@@ -119,7 +123,11 @@ function initProjectFilter() {
         card.style.opacity = matches ? '' : '0';
         card.style.transform = matches ? '' : 'scale(0.95)';
         card.style.pointerEvents = matches ? '' : 'none';
-        card.setAttribute('aria-hidden', matches ? 'false' : 'true');
+        if (matches) {
+          card.removeAttribute('aria-hidden');
+        } else {
+          card.setAttribute('aria-hidden', 'true');
+        }
         if (matches) {
           card.removeAttribute('tabindex');
         } else {
