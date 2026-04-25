@@ -48,26 +48,26 @@
         </div>
 
         <div class="detail-card" style="background:var(--bg);border:1px solid rgba(0,0,0,0.06);">
-          <div class="detail-img-placeholder">[ Inverter Assembly & Mounting ]</div>
+          <img src="../assets/images/inverter-stress-1.png" alt="Inverter assembly and mounting" style="width:100%;height:140px;object-fit:cover;border-radius:calc(var(--radius) - 4px);display:block;" />
         </div>
 
         <div class="detail-card" style="background:var(--bg);border:1px solid rgba(0,0,0,0.06);">
-          <div class="detail-img-placeholder">[ Stress Concentration Under Misalignment ]</div>
+          <img src="../assets/images/inverter-stress-2.png" alt="Stress concentration under misalignment" style="width:100%;height:140px;object-fit:cover;border-radius:calc(var(--radius) - 4px);display:block;" />
         </div>
 
         <div class="detail-card" style="background:var(--green-light)">
           <h2>Key Results</h2>
           <ul>
-            <li>Quantified stress increase under 0.3 mm mounting misalignment</li>
+            <li>Quantified stress increase under 0.5 mm mounting misalignment</li>
             <li>Identified two bolt locations as stress concentration sites</li>
-            <li>Recommended slot-hole modification reducing peak stress by 18%</li>
+            <li>Recommended modification to provide a SF > 2</li>
             <li>Results validated against physical teardown observations</li>
           </ul>
         </div>
 
         <div class="detail-card span-3" style="background:var(--blue)">
           <h2>Challenges &amp; Solutions</h2>
-          <p>Modeling realistic tolerance scenarios required parametric Abaqus models where mounting positions could be varied systematically. A Python scripting approach (Abaqus scripting interface) was used to automate the batch-run of misalignment cases, reducing setup time from hours to minutes per case. Contact formulation between the inverter base and housing required careful penalty stiffness tuning to avoid numerical instability.</p>
+          <p>Conducted structural analysis of a commercial-vehicle power inverter to evaluate how assembly and manufacturing tolerances affect mechanical stress when mounted onto the housing. Built FEA models, assessed deformation risks under misalignment scenarios, and provided recommendations to ensure robust, tolerance-resistant design</p>
         </div>
 
         <div class="detail-card span-3" style="background:var(--lavender)">
