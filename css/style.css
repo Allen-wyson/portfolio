@@ -575,3 +575,39 @@ footer {
   background: var(--green-dark);
   color: #fff;
 }
+
+/* ── Lightbox ── */
+.detail-card img { cursor: zoom-in; }
+
+.lb-overlay {
+  position: fixed; inset: 0; z-index: 1000;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+.lb-overlay.open { opacity: 1; pointer-events: all; }
+
+.lb-overlay img {
+  max-width: 90vw; max-height: 90vh;
+  object-fit: contain;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 48px rgba(0, 0, 0, 0.6);
+  transform: scale(0.94);
+  transition: transform 0.2s ease;
+  cursor: default;
+}
+.lb-overlay.open img { transform: scale(1); }
+
+.lb-close {
+  position: absolute; top: 1rem; right: 1.25rem;
+  background: none; border: none;
+  color: #fff; font-size: 2rem; line-height: 1;
+  cursor: pointer; padding: 0.25rem 0.5rem;
+  opacity: 0.75; transition: opacity 0.15s ease;
+}
+.lb-close:hover { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .lb-overlay, .lb-overlay img { transition: none; }
+}

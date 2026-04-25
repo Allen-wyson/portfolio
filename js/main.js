@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollProgress();
   initBackToTop();
   initProjectFilter();
+  initLightbox();
 });
 
 function initHamburger() {
@@ -100,6 +101,44 @@ function initBackToTop() {
   btn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
+}
+
+function initLightbox() {
+  const imgs = document.querySelectorAll('.detail-card img');
+  if (!imgs.length) return;
+
+  const overlay = document.createElement('div');
+  overlay.className = 'lb-overlay';
+  overlay.setAttribute('role', 'dialog');
+  overlay.setAttribute('aria-modal', 'true');
+  overlay.setAttribute('aria-label', 'Image preview');
+
+  const lbImg = document.createElement('img');
+  const closeBtn = document.createElement('button');
+  closeBtn.className = 'lb-close';
+  closeBtn.setAttribute('aria-label', 'Close preview');
+  closeBtn.textContent = '×';
+
+  overlay.append(closeBtn, lbImg);
+  document.body.append(overlay);
+
+  const open = (src, alt) => {
+    lbImg.src = src;
+    lbImg.alt = alt;
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  };
+
+  const close = () => {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
+  imgs.forEach(img => img.addEventListener('click', () => open(img.src, img.alt)));
+  closeBtn.addEventListener('click', close);
+  overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && overlay.classList.contains('open')) close(); });
 }
 
 function initProjectFilter() {
